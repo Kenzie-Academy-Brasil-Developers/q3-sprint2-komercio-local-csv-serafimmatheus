@@ -1,3 +1,4 @@
+import numbers
 from flask import Flask, jsonify, request
 import os
 import csv
@@ -22,7 +23,6 @@ def get_products():
         if per_page == 0:
             final = 3        
 
-        
         return {"data": list_products[inicial:final]}, HTTPStatus.OK
     except:
         return {"msg": "Algo deu errado!"}, HTTPStatus.BAD_REQUEST
